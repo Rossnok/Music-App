@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: none;
+    transition: 0.2s ease;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 50px;
+    margin: 1em 0;
+    background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: var(--gray-normal);
+}
+
+:root {
+    
+}
