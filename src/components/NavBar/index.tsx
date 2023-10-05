@@ -10,15 +10,15 @@ export default function NavBar() {
     return (
         <Stack>
             {!ismovil &&
-                <Stack bgcolor={'#5EC783'} direction={'row'} alignItems={'center'} gap={2} justifyContent={'space-between'}>
+                <Stack bgcolor={'#18003B'} direction={'column'} padding={'1em'} height={'100vh'} gap={2} width={'fit-content'}>
                     <Stack direction={'row'} gap={3} alignItems={'center'}>
                         <Image
-                            src={'/images/aguacate.png'}
+                            src={'/images/musica.png'}
                             width={70}
                             height={70}
                             alt='Company icon'
                         />
-                        <Typography variant='h3' fontFamily={'Helvatica'}>Empacadora Rosas</Typography>
+                        <Typography className={styles.rainbow_text} variant='h4'>RossMusic</Typography>
                     </Stack>
                     <Stack className={styles.links_container}>
                         <li>Home</li>

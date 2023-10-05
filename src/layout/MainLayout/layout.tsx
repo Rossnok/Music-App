@@ -1,4 +1,3 @@
-import '../../styles/globlals.css'
 import { Stack } from '@mui/material'
 import style from './layout.module.css'
 import NavBar from '@/components/NavBar'
