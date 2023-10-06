@@ -2,16 +2,25 @@ import React from 'react'
 import styles from './styles/roundedInput.module.css'
 
 type RoundedInputProps = {
-    type: string,
-    field: string,
-    placeholder: string,
-    error: any
+  type: string,
+  field: string,
+  placeholder: string,
+  error: any,
+  register: any,
+  label?: string,
+  onBlur?: any
 }
 
-export default function RoundedInput({type, field, placeholder, error}: RoundedInputProps) {
+export default function RoundedInput({ type, field, placeholder, error, register, label, onBlur }: RoundedInputProps) {
   return (
-    <>
-        <input className={styles.input} type="text" />
-    </>
+    <div className={styles.input_container} >
+      <input 
+      onBlur={onBlur}
+        {...register(field)}
+        className={styles.input}
+        type={type}
+        placeholder={`${placeholder}...`} />
+        <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error && error}</span></label>
+    </div>
   )
 }
