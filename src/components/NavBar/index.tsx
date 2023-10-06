@@ -2,10 +2,22 @@ import React from 'react'
 import { Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import styles from './styles/navBar.module.css'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
     const theme = useTheme();
     const ismovil = useMediaQuery(theme.breakpoints.down('sm'));
+    const router  = useRouter();
+
+    const toAlbumForm = () => {
+        router.push('/newAlbum');
+    }
+    const toHome = () => {
+        router.push('/');
+    }
+    const toAlbumInfo = () => {
+        router.push('/newAlbum');
+    }
 
     return (
         <Stack>
@@ -21,11 +33,11 @@ export default function NavBar() {
                         <Typography className={styles.rainbow_text} variant='h4'>RossMusic</Typography>
                     </Stack>
                     <Stack className={styles.links_container}>
-                        <li>Home</li>
-                        <li>Registro</li>
+                        <li onClick={toHome}>Home</li>
+                        <li onClick={toAlbumForm}>Nuevo Album</li>
                         <li>Procesos</li>
                     </Stack>
-                    <Stack direction={'row'} gap={'2em'} padding={'0em 2em 0em 0em'}>
+                    <Stack position={'relative'} direction={'row'} gap={'2em'} padding={'0em 2em 0em 0em'}>
                         <Button>Sign in</Button>
                         <Button>Login</Button>
                     </Stack>
