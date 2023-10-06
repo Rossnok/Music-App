@@ -1,3 +1,7 @@
 .carrucel{
     overflow: auto;
 }
+
+.carrucel::-webkit-scrollbar{
+    width: 0;
+}
