@@ -1,5 +1,4 @@
 .carrucel{
-    overflow: auto;
 }
 
 .carrucel::-webkit-scrollbar{
