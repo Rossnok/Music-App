@@ -14,13 +14,13 @@ type RoundedInputProps = {
 export default function RoundedInput({ type, field, placeholder, error, register, label, onBlur }: RoundedInputProps) {
   return (
     <div className={styles.input_container} >
-      <input 
-      onBlur={onBlur}
+      <input
+        onBlurCapture={() => {onBlur([field])}}
         {...register(field)}
         className={styles.input}
         type={type}
         placeholder={`${placeholder}...`} />
-        <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error && error}</span></label>
+      <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error && error.message}</span></label>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Stack, Typography } from '@mui/material'
+import { Button, Stack, Typography } from '@mui/material'
 import RoundedInput from '../common/RoundedInput'
 import { AlbumFormValidationSchema } from './AlbumFormValidationSchema'
-import { useForm, useFormContext } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './styles/newAlbumForm.module.css'
 import Image from 'next/image';
@@ -12,8 +12,13 @@ export default function NewAlbumForm() {
     resolver: yupResolver(AlbumFormValidationSchema)
   });
 
-  const onBlurName = () => {
-    trigger('name');
+  const handleSubmitForm = (data: any) => {
+    console.log(data);
+  }
+
+  const onBlur = (field: []) => {
+    trigger(field)
+    console.log('out of name input')
   }
 
   return (
@@ -32,83 +37,92 @@ export default function NewAlbumForm() {
         />
       </Stack>
       <Stack width={'60%'}>
-        <div className={styles.form_container}>
-          <Typography className={styles.rainbow_text}>Registrar Nuevo Album</Typography>
-          <Stack direction={'row'} gap={1} width={'100%'} justifyContent={'center'}>
-            <RoundedInput
-              onBlur={onBlurName}
-              register={register}
-              error={errors?.name ? errors.name : ''}
-              field='name'
-              placeholder='Nombre de usuario'
-              type='text'
-              key={'name'}
-            />
-            <RoundedInput
-              register={register}
-              error={errors?.email ? errors.email : ''}
-              field='email'
-              placeholder='Email...'
-              type='email'
-              key={'email'}
-            />
-          </Stack>
-          <Stack direction={'row'} gap={1} justifyContent={'center'}>
-            <RoundedInput
-              register={register}
-              error={errors?.name ? errors.name : ''}
-              field='name'
-              placeholder='Nombre de usuario'
-              type='text'
-              key={'name'}
-            />
-            <RoundedInput
-              register={register}
-              error={errors?.email ? errors.email : ''}
-              field='email'
-              placeholder='Email...'
-              type='email'
-              key={'email'}
-            />
-          </Stack>
-          <Stack direction={'row'} gap={1} justifyContent={'center'}>
-            <RoundedInput
-              register={register}
-              error={errors?.name ? errors.name : ''}
-              field='name'
-              placeholder='Nombre de usuario'
-              type='text'
-              key={'name'}
-            />
-            <RoundedInput
-              register={register}
-              error={errors?.email ? errors.email : ''}
-              field='email'
-              placeholder='Email...'
-              type='email'
-              key={'email'}
-            />
-          </Stack>
-          <Stack direction={'row'} gap={1} justifyContent={'center'}>
-            <RoundedInput
-              register={register}
-              error={errors?.name ? errors.name : ''}
-              field='name'
-              placeholder='Nombre de usuario'
-              type='text'
-              key={'name'}
-            />
-            <RoundedInput
-              register={register}
-              error={errors?.email ? errors.email : ''}
-              field='email'
-              placeholder='Email...'
-              type='email'
-              key={'email'}
-            />
-          </Stack>
-          <button className={styles.send_btn}>Registrar Nuevo Album</button>
-        </div>
+        <form action="">
+          <div className={styles.form_container}>
+            <Typography className={styles.rainbow_text}>Registrar Nuevo Album</Typography>
+            <Stack direction={'row'} gap={1} width={'100%'} justifyContent={'center'}>
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.name ? errors.name : ''}
+                field='name'
+                placeholder='Nombre del album...'
+                type='text'
+                key={'name'}
+              />
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.year ? errors.year : ''}
+                field='year'
+                placeholder='year...'
+                type='text'
+                key={'year'}
+              />
+            </Stack>
+            <Stack direction={'row'} gap={1} justifyContent={'center'}>
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.traks ? errors.traks : ''}
+                field='traks'
+                placeholder='Numero de pistas...'
+                type='text'
+                key={'traks'}
+              />
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.genres ? errors.genres : ''}
+                field='genres'
+                placeholder='Generos...'
+                type='text'
+                key={'genres'}
+              />
+            </Stack>
+            <Stack direction={'row'} gap={1} justifyContent={'center'}>
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.recordCompany ? errors.recordCompany : ''}
+                field='recordCompany'
+                placeholder='Discografica...'
+                type='text'
+                key={'recordCompany'}
+              />
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.email ? errors.email : ''}
+                field='email'
+                placeholder='Email...'
+                type='email'
+                key={'email'}
+              />
+            </Stack>
+            <Stack direction={'row'} gap={1} justifyContent={'center'}>
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.userName ? errors.userName : ''}
+                field='userName'
+                placeholder='Nombre de usuario...'
+                type='text'
+                key={'userName'}
+              />
+              <RoundedInput
+                onBlur={onBlur}
+                register={register}
+                error={errors?.email ? errors.email : ''}
+                field='email'
+                placeholder='Nombre de usuario...'
+                type='email'
+                key={'email'}
+              />
+            </Stack>
+            <Button className={styles.send_btn} onClick={handleSubmit(handleSubmitForm)}>Registrar Nuevo Album</Button>
+          </div>
+        </form>
       </Stack>
     </Stack>
   )

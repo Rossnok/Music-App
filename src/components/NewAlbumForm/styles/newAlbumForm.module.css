@@ -1,7 +1,7 @@
 .form_container {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1em;
+    gap: 3em;
     background-color:#130f7aff;
     background-color: #5523d2;
     width: 100%;
