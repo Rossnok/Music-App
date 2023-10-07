@@ -107,6 +107,7 @@ export default function NewAlbumForm() {
               key={'email'}
             />
           </Stack>
+          <button className={styles.send_btn}>Registrar Nuevo Album</button>
         </div>
       </Stack>
     </Stack>

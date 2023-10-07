@@ -1,7 +1,7 @@
 .input_container{
     display: flex;
     flex-flow: column nowrap;  
-    gap: .1em;
+    gap: 3em;
     padding: 0em 1em;
     align-items: center;
     width: 100vh;
@@ -26,7 +26,6 @@
 
 .input:focus{
     border: 2px solid rgb(98, 0, 255);
-    height: 32px;
 }
 
 .form_inputLabel{
