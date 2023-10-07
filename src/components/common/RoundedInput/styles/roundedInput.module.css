@@ -4,11 +4,13 @@
     gap: .1em;
     padding: 0em 1em;
     align-items: center;
+    width: 100vh;
 }
 
 .input{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 32px;
+    height: 40px;
+    width: 100%;
     border-color: transparent;
     padding: 0em 2em;
     margin: 3px;

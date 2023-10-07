@@ -17,25 +17,24 @@ export default function NewAlbumForm() {
   }
 
   return (
-    <Stack width={'100%'} padding={'1em 1em'} direction={'row'} overflow={'auto'}>
-      <Stack width={'fit-content'}>
+    <Stack width={'100%'} direction={'row'} overflow={'auto'}>
+      <Stack width={'40%'} bgcolor={'#371287'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
         <Image
           className={styles.image}
-          src={'/images/balancin.png'}
+          src={'/images/addAlbum.png'}
           alt='Register image'
           style={{
-            width: '100%',
+            width: '70%',
             height: 'auto',
           }}
           width={600}
           height={700}
         />
       </Stack>
-      <Stack bgcolor={'#fabffe'} borderRadius={'2em'} height={'fit-content'}
-      padding={'1em'}>
+      <Stack width={'60%'}>
         <div className={styles.form_container}>
           <Typography className={styles.rainbow_text}>Registrar Nuevo Album</Typography>
-          <Stack direction={'row'} gap={1} flexWrap={'wrap'} width={'100%'} justifyContent={'center'}>
+          <Stack direction={'row'} gap={1} width={'100%'} justifyContent={'center'}>
             <RoundedInput
               onBlur={onBlurName}
               register={register}
@@ -54,7 +53,7 @@ export default function NewAlbumForm() {
               key={'email'}
             />
           </Stack>
-          <Stack direction={'row'} flexWrap={'wrap'} gap={1} justifyContent={'center'}>
+          <Stack direction={'row'} gap={1} justifyContent={'center'}>
             <RoundedInput
               register={register}
               error={errors?.name ? errors.name : ''}
@@ -72,7 +71,7 @@ export default function NewAlbumForm() {
               key={'email'}
             />
           </Stack>
-          <Stack direction={'row'} flexWrap={'wrap'} gap={1} justifyContent={'center'}>
+          <Stack direction={'row'} gap={1} justifyContent={'center'}>
             <RoundedInput
               register={register}
               error={errors?.name ? errors.name : ''}
@@ -90,7 +89,7 @@ export default function NewAlbumForm() {
               key={'email'}
             />
           </Stack>
-          <Stack direction={'row'} flexWrap={'wrap'} gap={1} justifyContent={'center'}>
+          <Stack direction={'row'} gap={1} justifyContent={'center'}>
             <RoundedInput
               register={register}
               error={errors?.name ? errors.name : ''}
