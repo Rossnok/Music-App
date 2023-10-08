@@ -1,5 +1,5 @@
 import { Stack} from "@mui/material"
-import ImagesContainer from "../ImagesContainer"
+import ImagesContainer from "../ImagesContainer/index"
 
 export default function HomeComponent() {
     return (
