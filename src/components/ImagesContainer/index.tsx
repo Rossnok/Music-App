@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material'
-import data from '../AlbumsCarrucel/data'
-import CarrucelCard from '../AlbumsCarrucel/CarrucelCard'
+import data from '../../helpers/data'
+import CarrucelCard from '../CarrucelCard'
 
 export default function ImagesContainer() {
     const { albumsData } = data()

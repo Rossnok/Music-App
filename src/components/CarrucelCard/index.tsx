@@ -1,7 +1,6 @@
 import { Stack, Typography } from "@mui/material"
 import Image from "next/image"
 import styles from './styles/carrucelCard.module.css'
-import { Height } from "@mui/icons-material"
 
 type CarrucelCardProps = {
     src: any,
