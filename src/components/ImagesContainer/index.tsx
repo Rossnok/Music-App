@@ -5,7 +5,6 @@ import CarrucelCard from '../AlbumsCarrucel/CarrucelCard'
 export default function ImagesContainer() {
     const { albumsData } = data()
 
-
     return (
         <Stack direction={'row'} flexWrap={'wrap'} gap={3} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {

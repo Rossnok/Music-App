@@ -1,5 +1,4 @@
-import { Stack, Typography } from "@mui/material"
-import AlbumsCarrucel from "../AlbumsCarrucel"
+import { Stack} from "@mui/material"
 import ImagesContainer from "../ImagesContainer"
 
 export default function HomeComponent() {
