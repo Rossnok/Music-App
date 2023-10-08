@@ -40,7 +40,7 @@ export default function CarrucelCard({ src, name, publication, traks, genre, dis
                     <Typography className={styles.info_text}>{`${traks} Canciones`}</Typography>
                 </Stack>
                 <Stack direction={'row'} alignItems={'center'} gap={1}>
-                    <Image src={'/images/albumicons/music-store.png'} alt="Album Icon" width={25} height={25}/>
+                    <Image src={'/images/albumicons/music_store.png'} alt="Album Icon" width={25} height={25}/>
                     <Typography className={styles.info_text}>{`Discografica ${discografic}`}</Typography>
                 </Stack>
             </Stack>
