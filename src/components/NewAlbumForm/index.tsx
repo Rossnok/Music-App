@@ -6,19 +6,22 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './styles/newAlbumForm.module.css'
 import Image from 'next/image';
+import send  from '../../pages/api/send'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function NewAlbumForm() {
   const { register, trigger, handleSubmit, formState: { errors, isSubmitSuccessful }, setValue, watch, getValues } = useForm({
     resolver: yupResolver(AlbumFormValidationSchema)
   });
 
-  const handleSubmitForm = (data: any) => {
+  const handleSubmitForm = async (data: any) => {
     console.log(data);
+    await send()
   }
 
   const onBlur = (field: []) => {
     trigger(field)
-    console.log('out of name input')
+    console.log('out of name input')    
   }
 
   return (

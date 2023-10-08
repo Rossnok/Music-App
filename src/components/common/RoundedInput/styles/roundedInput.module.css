@@ -28,7 +28,8 @@
 }
 
 .form_inputLabel{
-    font-size: 12px;
+    height: 14px;
+    font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
     color: rgb(83, 0, 0);
     padding: 0em .5em;

@@ -20,7 +20,7 @@ export default function RoundedInput({ type, field, placeholder, error, register
         className={styles.input}
         type={type}
         placeholder={`${placeholder}...`} />
-      <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error && error.message}</span></label>
+      <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error.message ? error.message : ''}</span></label>
     </div>
   )
 }
