@@ -5,7 +5,7 @@ import {Stack} from '@mui/material'
 const { albumsData } = data() 
 
 export const proccessData = ( ) => {
-    var proccesedData = albumsData.map((album, index) => {
+  /*  var proccesedData = albumsData.map((album, index) => {
        if (index % 3 === 0 || index === 0) {
          return (
            <Stack key={index} direction={'row'} width={'fit-content'} gap={3} flexWrap={'wrap'}>
@@ -48,5 +48,5 @@ export const proccessData = ( ) => {
        proccesedData[parseInt(element)] !== undefined ? filteredArray.push(proccesedData[parseInt(element)]) : ''
      }
 
-     return( filteredArray)
+     return( filteredArray)*/
  }  
