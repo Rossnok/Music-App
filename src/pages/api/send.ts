@@ -2,20 +2,18 @@ import { EmailTemplate } from '../../components/EmailTemplate/EmailTemplate';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_APIKEY);
+const resend = new Resend('re_Zt24xxXs_P6j4vmEnsPgjpefbGf3o358m');
 
 export default async function POST() {
   try {
-    const data = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: ['delivered@resend.dev'],
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: ['SergioRMWorkMail@gmail.com'],
       subject: 'Hello world',
       react: EmailTemplate({userName:'rossnok'}),
       text:''
     });
-
-    return console.log(NextResponse.json(data));
   } catch (error) {
-    return console.log(NextResponse.json({ error }));
+    return  await console.log(NextResponse.json({ error }));
   }
 }

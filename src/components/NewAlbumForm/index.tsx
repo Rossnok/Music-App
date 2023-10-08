@@ -15,8 +15,7 @@ export default function NewAlbumForm() {
   });
 
   const handleSubmitForm = async (data: any) => {
-    console.log(data);
-    await send()
+    await send();
   }
 
   const onBlur = (field: []) => {
@@ -123,7 +122,7 @@ export default function NewAlbumForm() {
                 key={'email'}
               />
             </Stack>
-            <Button className={styles.send_btn} onClick={handleSubmit(handleSubmitForm)}>Registrar Nuevo Album</Button>
+            <Button className={styles.send_btn} onClick={handleSubmitForm}>Registrar Nuevo Album</Button>
           </div>
         </form>
       </Stack>
