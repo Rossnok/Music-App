@@ -1,5 +1,5 @@
 import NewAlbumForm from "@/components/NewAlbumForm"
-import RootLayout from "@/layout/MainLayout/layout"
+import RootLayout from "@/layout/MainLayout"
 
 export default function newAlbum() {
   return (
