@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Stack direction={'column'} className={style.container}>
+    <Stack direction={'row'} className={style.container}>
       <NavBar />
       {children}
     </Stack>

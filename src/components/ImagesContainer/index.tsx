@@ -6,7 +6,7 @@ export default function ImagesContainer() {
     const { albumsData } = data()
 
     return (
-        <Stack direction={'row'} flexWrap={'wrap'} gap={3} >
+        <Stack direction={'row'} flexWrap={'wrap'} gap={3} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {
                 return (
                     <>
