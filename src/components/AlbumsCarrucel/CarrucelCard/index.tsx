@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import Image from "next/image"
 import styles from './styles/carrucelCard.module.css'
+import { Height } from "@mui/icons-material"
 
 type CarrucelCardProps = {
     src: any,
@@ -13,22 +14,37 @@ type CarrucelCardProps = {
 
 export default function CarrucelCard({ src, name, publication, traks, genre, discografic }: CarrucelCardProps) {
     return (
-        <Stack className={styles.card_container}>
-            <Stack className={styles.image_container}>
+        <div className={styles.card_container}>
+            <div className={styles.image_container}>
                 <Image
-                    className={styles.image_border}
-                    fill={true}
-                    objectFit="contain"
+                    className={styles.next_image}
+                    style={{ objectFit: 'contain' }}
+                    layout="fill"
                     src={src} alt="Music Album"
                 />
+            </div>
+            <Stack className={styles.info_container}>
+                <Stack direction={'row'} alignItems={'center'} gap={1}>
+                    <Image src={'/images/albumCardIcons/album.png'} alt="Album Icon" width={25} height={25}/>
+                    <Typography className={styles.info_text}>{name}</Typography>
+                </Stack>
+                <Stack direction={'row'} alignItems={'center'} gap={1}>
+                    <Image src={'/images/albumCardIcons/fecha.png'} alt="Album Icon" width={25} height={25}/>
+                    <Typography className={styles.info_text}>{publication}</Typography>
+                </Stack>
+                <Stack direction={'row'} alignItems={'center'} gap={1}>
+                    <Image src={'/images/albumCardIcons/music_genre.png'} alt="Album Icon" width={25} height={25}/>
+                    <Typography className={styles.info_text}>{genre}</Typography>
+                </Stack>
+                <Stack direction={'row'} alignItems={'center'} gap={1}>
+                    <Image src={'/images/albumCardIcons/tracks.png'} alt="Album Icon" width={25} height={25}/>
+                    <Typography className={styles.info_text}>{`${traks} Canciones`}</Typography>
+                </Stack>
+                <Stack direction={'row'} alignItems={'center'} gap={1}>
+                    <Image src={'/images/albumCardIcons/music-store.png'} alt="Album Icon" width={25} height={25}/>
+                    <Typography className={styles.info_text}>{`Discografica ${discografic}`}</Typography>
+                </Stack>
             </Stack>
-            <Stack gap={.3}>
-                <Typography className={styles.info_text}>{name}</Typography>
-                <Typography className={styles.info_text}>{publication}</Typography>
-                <Typography className={styles.info_text}>{traks}</Typography>
-                <Typography className={styles.info_text}>{genre}</Typography>
-                <Typography className={styles.info_text}>{discografic}</Typography>
-            </Stack>
-        </Stack>
+        </div>
     )
 }
