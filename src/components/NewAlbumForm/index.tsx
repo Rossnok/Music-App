@@ -22,7 +22,7 @@ export default function NewAlbumForm() {
   }
 
   return (
-    <Stack width={'100%'} direction={'row'} overflow={'auto'}>
+    <Stack width={'100%'} direction={'row'} >
       <Stack width={'40%'} bgcolor={'#371287'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
         <Image
           className={styles.image}
