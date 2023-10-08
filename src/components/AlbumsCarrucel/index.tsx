@@ -14,7 +14,7 @@ export default function AlbumsCarrucel() {
       className={styles.carrucel}
     >
       {
-       proccessData()
+       //proccessData()
       }
     </Carousel>
   )
