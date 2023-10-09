@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Stack, Typography } from '@mui/material'
 import RoundedInput from '../common/RoundedInput'
 import { AlbumFormValidationSchema } from './AlbumFormValidationSchema'
@@ -7,14 +7,29 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './styles/newAlbumForm.module.css'
 import Image from 'next/image';
 
+
 export default function NewAlbumForm() {
   const { register, trigger, handleSubmit, formState: { errors, isSubmitSuccessful }, setValue, watch, getValues } = useForm({
     resolver: yupResolver(AlbumFormValidationSchema)
   });
+  
+  const [apiState, setApiState] = useState<Boolean>()
 
-  const handleSubmitForm = (data: any) => {
-
+  const handleSubmitForm = async (data: any) => {
+    try {
+      setApiState(true)
+      const res = await fetch('/api/send/route', {
+        method: 'POST'
+      })
+      const dataFetch = await res.json()
+      console.log(dataFetch)
+      setApiState(false) 
+    } catch(error){
+      console.log(error)
+    }
   }
+
+  console.log(apiState)
 
   const onBlur = (field: []) => {
     trigger(field)

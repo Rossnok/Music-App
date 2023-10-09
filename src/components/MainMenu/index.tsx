@@ -4,7 +4,7 @@ import styles from './styles/navBar.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 
-export default function NavBar() {
+export default function MainMenu() {
     const theme = useTheme();
     const ismovil = useMediaQuery(theme.breakpoints.down('sm'));
     const router  = useRouter();
@@ -14,9 +14,6 @@ export default function NavBar() {
     }
     const toHome = () => {
         router.push('/');
-    }
-    const toAlbumInfo = () => {
-        router.push('/newAlbum');
     }
 
     return (

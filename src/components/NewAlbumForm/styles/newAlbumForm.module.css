@@ -23,7 +23,7 @@
 }
 
 .send_btn{
-    height: 30px;
+    height: auto;
     width: 40%;
     border-style: none;
     cursor: pointer;
