@@ -1,4 +1,4 @@
-import AlbumInfo from '@/components/AlbumInfo'
+import AlbumInfo from '@/components/Album/AlbumInfo'
 import RootLayout from '@/layout/MainLayout'
 import { useRouter } from 'next/router'
 import React from 'react'

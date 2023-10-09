@@ -32,7 +32,6 @@ export default function MainMenu() {
                     <Stack className={styles.links_container}>
                         <li onClick={toHome}>Home</li>
                         <li onClick={toAlbumForm}>Nuevo Album</li>
-                        <li>Procesos</li>
                     </Stack>
                     <Stack position={'relative'} direction={'row'} gap={'2em'} padding={'0em 2em 0em 0em'}>
                         <Button>Sign in</Button>

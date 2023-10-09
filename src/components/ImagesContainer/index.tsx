@@ -19,9 +19,8 @@ export default function ImagesContainer() {
         <Stack direction={'row'} flexWrap={'wrap'} padding={'.8em 0em 0em 1em'} width={'100%'} gap={3} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {
                 return (
-                    <>
+                    <Stack key={index}>
                         <CarrucelCard
-                            key={index}
                             onClick={onClick}
                             name={album.albumName ? album.albumName : ''}
                             publication={album.year ? album.year : ''}
@@ -30,7 +29,7 @@ export default function ImagesContainer() {
                             genre={album.genre ? album.genre : ''}
                             src={album.src ? album.src : ''}
                         />
-                    </>
+                    </Stack>
                 )
             })
             }

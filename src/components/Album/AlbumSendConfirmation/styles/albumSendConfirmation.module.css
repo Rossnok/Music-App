@@ -1,0 +1,11 @@
+.confirmation_container{
+    width: 50%;
+    height: 50%;
+    padding: 1em;
+    background-color: #5523d2;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+}
