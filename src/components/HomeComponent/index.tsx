@@ -3,7 +3,7 @@ import ImagesContainer from "../ImagesContainer/index"
 
 export default function HomeComponent() {
     return (
-        <Stack width={'100%'} minWidth={'300px'} padding={'.8em'} height={'100vh'}>
+        <Stack width={'100%'} minWidth={'300px'} alignItems={'center'} height={'100vh'}>
             <ImagesContainer />
         </Stack>
     )

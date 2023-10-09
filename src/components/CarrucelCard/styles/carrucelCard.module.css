@@ -9,6 +9,21 @@
     background-color:  #6a37eb;
 }
 
+.card_container:hover{
+     z-index: 1;
+     cursor: pointer;
+     transition: 500ms all;
+     transform: scale(105%);
+     -webkit-transform: scale(105%);
+     -moz-transform: scale(105%);
+     -ms-transform: scale(105%);
+     -o-transform: scale(105%);
+     -webkit-transition: 500ms all;
+     -moz-transition: 500ms all;
+     -ms-transition: 500ms all;
+     -o-transition: 500ms all;
+}
+
 .image_container {
     width: 100% !important;
     height: 60%;

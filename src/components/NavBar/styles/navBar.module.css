@@ -20,13 +20,14 @@
 }
 
 .links_container>li:hover {
-    transition: 300ms all;
-    border-bottom: 2px solid rgb(140, 0, 255);
+    scale: 110%;
     color: rgb(140, 0, 255);
-    -webkit-transition: 300ms all;
-    -moz-transition: 300ms all;
-    -ms-transition: 300ms all;
-    -o-transition: 300ms all;
+    transition: 500ms all;
+    border-bottom: 2px solid rgb(140, 0, 255);    
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    -ms-transition: 500ms all;
+    -o-transition: 500ms all;
 }
 
 .rainbow_text {
