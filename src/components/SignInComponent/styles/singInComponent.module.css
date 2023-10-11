@@ -1,0 +1,28 @@
+.sign_in_container{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    background-color: #5523d2;
+    border-radius: 2em;
+}
+
+.title_container{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.rainbow_text {
+    font-size: 2em;
+    background-image: linear-gradient(to left, #F26699, #A599C5, #EE05F2);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center !important;
+    width: 100%;
+}
