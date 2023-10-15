@@ -7,6 +7,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { SignInValidationSchema } from './SignInValidationSchema'
 import { Typography } from '@mui/material'
 
+//TODO terminar con el diseño del componente, arreglar el roundedInput para que pueda ser solo la linea inferior para el login
+
 export default function SignInComponent() {
     const { register, trigger, handleSubmit, formState: { errors, isSubmitSuccessful }, setValue, watch, getValues } = useForm({
         resolver: yupResolver(SignInValidationSchema)
@@ -17,11 +19,10 @@ export default function SignInComponent() {
     }
 
     return (
-        <Stack width={'100%'} height={'100vh'} bgcolor={'#121211'} alignItems={'center'} justifyContent={'center'}>
+        <div className={styles.sign_in_layout}>
             <div className={styles.sign_in_container}>
-                <div className={styles.title_container}>
-                    <h1 className={styles.rainbow_text}>RossMusic</h1>
-                    <Typography className={styles.rainbow_text}>Iniciar Session</Typography>
+                <div className={styles.tittle_container}>
+                    <Typography variant='h5' className={styles.rainbow_text}>Sing In or Sign Up</Typography>
                 </div>
                 <RoundedInput
                     onBlur={onBlur}
@@ -31,6 +32,10 @@ export default function SignInComponent() {
                     type='text'
                     key={'userName'}
                     error={errors.userName ? errors.userName : ""}
+                    $border={'1px solid white'}
+                    $background={'transparent'}
+                    $width='80%'
+                    $color='white'
                 />
                 <RoundedInput
                     onBlur={onBlur}
@@ -40,8 +45,12 @@ export default function SignInComponent() {
                     type='password'
                     key={'password'}
                     error={errors.password ? errors.password : ""}
+                    $border={'1px solid white'}
+                    $background={'transparent'}
+                    $width='80%'
+                    $color='white'
                 />
             </div>
-        </Stack>
+        </div>
     )
 }
