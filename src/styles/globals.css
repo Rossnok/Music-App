@@ -38,5 +38,17 @@ input[type=number] {
 }
 
 :root {
-    
+    --tolopea-50: #e4e4ff;
+    --tolopea-100: #d2cfff;
+    --tolopea-200: #afa8ff;
+    --tolopea-300: #8474ff;
+    --tolopea-400: #693eff;
+    --tolopea-500: #5e13ff;
+    --tolopea-600: #5800ff;
+    --tolopea-700: #5800ff;
+    --tolopea-800: #4e00e4;
+    --tolopea-900: #4300b0;
+    --tolopea-950: #18003b;
+
+
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Stack } from '@mui/material'
 import styles from './styles/singInComponent.module.css'
 import RoundedInput from '../common/RoundedInput'
 import { useForm } from 'react-hook-form'
@@ -28,27 +27,29 @@ export default function SignInComponent() {
                     onBlur={onBlur}
                     register={register}
                     field='userName'
-                    placeholder='User name'
                     type='text'
                     key={'userName'}
                     error={errors.userName ? errors.userName : ""}
-                    $border={'1px solid white'}
-                    $background={'transparent'}
+                    $background='var(--tolopea-100)'
                     $width='80%'
-                    $color='white'
+                    $color='var(--tolopea-600)'
+                    $height='32px'
+                    label='Nombre de usuario'
+                    $border='.5em'
                 />
                 <RoundedInput
                     onBlur={onBlur}
                     register={register}
                     field='password'
-                    placeholder='Password'
                     type='password'
                     key={'password'}
                     error={errors.password ? errors.password : ""}
-                    $border={'1px solid white'}
-                    $background={'transparent'}
                     $width='80%'
-                    $color='white'
+                    $background='var(--tolopea-100)'
+                    $color='var( --tolopea-600)'
+                    $height='32px'
+                    label='Password'
+                    $border='.5em'
                 />
             </div>
         </div>
