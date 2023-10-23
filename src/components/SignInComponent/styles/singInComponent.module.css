@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom right ,#06002a, #12007afb);
+    background: var(--tolopea-950);
 }
 
 .sign_in_container{
@@ -12,7 +12,7 @@
     gap: 1em;
     width: 30em;
     height: 70%;
-    background-color: #455bebce;
+    background-color: var(--navy-blue-950);
     padding: 2em;
     border-radius: 2em;
     -webkit-border-radius: 2em;
