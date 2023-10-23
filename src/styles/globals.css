@@ -38,6 +38,18 @@ input[type=number] {
 }
 
 :root {
+    --navy-blue-50: #f1f2ff;
+    --navy-blue-100: #e6e5ff;
+    --navy-blue-200: #ceceff;
+    --navy-blue-300: #aaa7ff;
+    --navy-blue-400: #8176ff;
+    --navy-blue-500: #593fff;
+    --navy-blue-600: #4418ff;
+    --navy-blue-700: #3407fa;
+    --navy-blue-800: #2b05d2;
+    --navy-blue-900: #2506ac;
+    --navy-blue-950: #12007afa;
+
     --tolopea-50: #e4e4ff;
     --tolopea-100: #d2cfff;
     --tolopea-200: #afa8ff;
@@ -49,6 +61,4 @@ input[type=number] {
     --tolopea-800: #4e00e4;
     --tolopea-900: #4300b0;
     --tolopea-950: #18003b;
-
-
 }
