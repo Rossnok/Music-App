@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles/roundedInput.module.css'
 import styled from 'styled-components'
-import { TimeToLeaveOutlined } from '@mui/icons-material'
+import { Stack } from '@mui/material'
 
 type RoundedInputProps = {
   type: string,
@@ -55,14 +55,11 @@ export default function RoundedInput({
 }: RoundedInputProps) {
   return (
     <div className={styles.input_container} >
-      <div>
-        <span className={styles.rainbow_text}>{label}</span>
-      </div>
       <Input
         onBlurCapture={() => { onBlur([field]) }}
         {...register(field)}
         type={type}
-        placeholder={placeholder? `${placeholder}...`: ''}
+        placeholder={placeholder ? `${placeholder}...` : ''}
         $background={$background}
         $border={$border}
         $width={$width}
