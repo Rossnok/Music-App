@@ -2,19 +2,8 @@
     display: flex;
     flex-flow: column nowrap;  
     padding: 0em 1em;
-    width: 100%;
 }
 
 .input:focus{
     border: 2px solid rgb(98, 0, 255);
-}
-
-.form_inputLabel{
-    width: 100%;
-    height: 14px;
-    text-align: end;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
-    color: rgb(83, 0, 0);
-    padding: 0em .5em;
 }

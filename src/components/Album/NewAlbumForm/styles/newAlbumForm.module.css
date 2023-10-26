@@ -16,7 +16,7 @@
 .rainbow_text {
     font-size: 2em;
     background-image: linear-gradient(to left, #F26699, #A599C5, #EE05F2);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     text-align: center !important;
     width: 100%;

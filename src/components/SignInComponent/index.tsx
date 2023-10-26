@@ -20,6 +20,9 @@ export default function SignInComponent() {
     return (
         <>
             <div className={styles.sign_in_layout}>
+                <div className={styles.glass_filter} >
+
+                </div>
             </div>
             <div className={styles.sign_in_container}>
                 <div className={styles.sign_in_component}>
@@ -34,7 +37,7 @@ export default function SignInComponent() {
                             type='text'
                             onBlur={onBlur}
                             placeholder='UserName'
-                            $width='90%'
+                            $width='85%'
                         />
                         <RoundedInput
                             register={register}
@@ -43,10 +46,10 @@ export default function SignInComponent() {
                             type='password'
                             onBlur={onBlur}
                             placeholder='Password'
-                            $width='90%'
+                            $width='85%'
                         />
                     </Stack>
-                    <button className={styles.send_button}>Enviar</button>
+                    <Button variant='contained' className={styles.send_button}>Ingresar</Button>
                 </div>
             </div>
         </>

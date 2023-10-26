@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles/roundedInput.module.css'
 import styled from 'styled-components'
-import { Stack } from '@mui/material'
 
 type RoundedInputProps = {
   type: string,
@@ -21,21 +20,37 @@ type RoundedInputProps = {
   $height?: string
 }
 
+const Label = styled.label<{$width?:string}>`
+  height: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+  color: var(--error-text);
+  padding: 0em 0em 0em 1em;
+  align-self: center;
+  width: ${props => props.$width || '70%'};
+`
+
 const Input = styled.input<RoundedInputProps>`
     color: ${props => props.$color || 'black'};
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: ${props => props.$height || "40px"};
     width: ${props => props.$width || '70%'};
-    border-color: transparent;
-    border-bottom: ${props => props.$border || 'none'};
+    border: 3px solid transparent;
     background-color: ${props => props.$background || 'white'};
     padding: 0em 1em;
     margin: 3px;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 600;
     align-self: ${props => props.$alingSelf || 'center'};
     letter-spacing: .5px;
     border-radius: ${props => props.$border || '.8em'};
     outline: 0;
+
+  &:focus {
+   border: 3px solid var(--tolopea-700)
+ }
 `
 
 export default function RoundedInput({
@@ -67,7 +82,7 @@ export default function RoundedInput({
         $color={$color}
         $height={$height}
       />
-      <label htmlFor={field} className={styles.form_inputLabel}><span className={error && styles.labelError_color}>{error.message ? error.message : ''}</span></label>
+      <Label  $width={$width}  htmlFor={field}><span className={error && styles.labelError_color}>{error.message ? error.message : ''}</span></Label>
     </div>
   )
 }
