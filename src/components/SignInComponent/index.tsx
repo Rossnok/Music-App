@@ -5,13 +5,18 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { SignInValidationSchema } from './SignInValidationSchema'
 import { Button, Stack, Typography } from '@mui/material'
-
+import { useQuery } from '@apollo/client'
+import { GET_USERS } from '@/apollo/graphql/user/queries'
 //TODO terminar con el diseño del componente, arreglar el roundedInput para que pueda ser solo la linea inferior para el login
 
 export default function SignInComponent() {
     const { register, trigger, handleSubmit, formState: { errors, isSubmitSuccessful }, setValue, watch, getValues } = useForm({
         resolver: yupResolver(SignInValidationSchema)
     })
+
+    const { data, error, loading } = useQuery(GET_USERS)
+
+    loading? '': console.log(data)
 
     const onBlur = (field: []) => {
         trigger(field)
@@ -21,7 +26,6 @@ export default function SignInComponent() {
         <>
             <div className={styles.sign_in_layout}>
                 <div className={styles.glass_filter} >
-
                 </div>
             </div>
             <div className={styles.sign_in_container}>

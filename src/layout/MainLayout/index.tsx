@@ -10,8 +10,8 @@ export default function RootLayout({
 }) {
   return (
     <Stack direction={'row'} className={style.container}>
-      <MainMenu />
-      {children}
+        <MainMenu />
+        {children}
     </Stack>
   )
 }

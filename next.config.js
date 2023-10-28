@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         // matching all API routes
-        source: "/api/:path*",
+        source: "/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "http://127.0.0.1:3000" }, // replace this your actual origin
