@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles/roundedInput.module.css'
 import styled from 'styled-components'
+import { Stack, Typography } from '@mui/material'
 
 type RoundedInputProps = {
   type: string,
@@ -17,10 +18,20 @@ type RoundedInputProps = {
   $width?: string,
   $alingSelf?: string
   $color?: string,
-  $height?: string
+  $height?: string,
+  border_style?: string
 }
 
-const Label = styled.label<{$width?:string}>`
+const Span = styled.span<{ 
+  $width?: string,
+  $alingSelf?: string
+ }>`
+  width: ${props => props.$width || '80%'};
+  align-self: ${props => props.$alingSelf || 'center'};
+  padding: 0em .5em;
+`
+
+const Label = styled.label<{ $width?: string }>`
   height: 14px;
   font-size: 14px;
   font-weight: 600;
@@ -37,7 +48,7 @@ const Input = styled.input<RoundedInputProps>`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: ${props => props.$height || "40px"};
     width: ${props => props.$width || '70%'};
-    border: 3px solid transparent;
+    border: ${props => props.border_style || '3px solid transparent'};
     background-color: ${props => props.$background || 'white'};
     padding: 0em 1em;
     margin: 3px;
@@ -66,10 +77,14 @@ export default function RoundedInput({
   $width,
   $alingSelf,
   $color,
-  $height
+  $height,
+  border_style
 }: RoundedInputProps) {
   return (
     <div className={styles.input_container} >
+      {label &&
+        <Span $width={$width} $alingSelf={$alingSelf}>{label}</Span>
+      }
       <Input
         onBlurCapture={() => { onBlur([field]) }}
         {...register(field)}
@@ -81,8 +96,9 @@ export default function RoundedInput({
         $alingSelf={$alingSelf}
         $color={$color}
         $height={$height}
+        border_style={border_style}
       />
-      <Label  $width={$width}  htmlFor={field}><span className={error && styles.labelError_color}>{error.message ? error.message : ''}</span></Label>
+      <Label $width={$width} htmlFor={field}><span className={error && styles.labelError_color}>{error.message ? error.message : ''}</span></Label>
     </div>
   )
 }

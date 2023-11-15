@@ -7,6 +7,7 @@ import { SignInValidationSchema } from './SignInValidationSchema'
 import { Button, Stack, Typography } from '@mui/material'
 import { useQuery } from '@apollo/client'
 import { GET_USERS } from '@/apollo/graphql/user/queries'
+import Image from 'next/image'
 //TODO terminar con el diseño del componente, arreglar el roundedInput para que pueda ser solo la linea inferior para el login
 
 export default function SignInComponent() {
@@ -16,46 +17,68 @@ export default function SignInComponent() {
 
     const { data, error, loading } = useQuery(GET_USERS)
 
-    loading? '': console.log(data)
+    loading ? '' : console.log(data)
 
     const onBlur = (field: []) => {
         trigger(field)
     }
 
     return (
-        <>
-            <div className={styles.sign_in_layout}>
-                <div className={styles.glass_filter} >
-                </div>
-            </div>
-            <div className={styles.sign_in_container}>
-                <div className={styles.sign_in_component}>
-                    <div className={styles.tittle_container}>
-                        <Typography variant='h5' className={styles.rainbow_text}>Sing In or Sign Up</Typography>
-                    </div>
-                    <Stack gap={1}>
+        <Stack direction={'row'} flexWrap={'nowrap'}>
+            <Stack className={styles.sign_image_container} width={'45%'} height={'100vh'}>
+                <Image
+                    className={styles.img_contanier}
+                    src={'/images/sign_in_image.jpg'}
+                    alt='album image'
+                    layout='fill'
+                    objectFit='fill'
+                />
+            </Stack>
+            <Stack className='singInFormContainer' alignItems={'center'} justifyContent={'center'} width={'55%'} height={'100vh'}>
+                <div className={styles.form_container}>
+                    <div className={styles.inputs_container}>
                         <RoundedInput
                             register={register}
                             error={errors.userName ? errors.userName : ''}
                             field='userName'
                             type='text'
                             onBlur={onBlur}
-                            placeholder='UserName'
-                            $width='85%'
+                            placeholder='Nombre de usuario...'
+                            $width='100%'
+                            label='Nombre de usuario'
+                            border_style='1px solid gray'
+                            $color='black'
+                            $border='4px'
+                        />
+                        <RoundedInput
+                            register={register}
+                            error={errors.email ? errors.email : ''}
+                            field='email'
+                            type='text'
+                            onBlur={onBlur}
+                            placeholder='Correo electronico...'
+                            $width='100%'
+                            label='Correo electronico'
+                            border_style='1px solid gray'
+                            $color='black'
+                            $border='4px'
                         />
                         <RoundedInput
                             register={register}
                             error={errors.password ? errors.password : ''}
                             field='password'
-                            type='password'
+                            type='text'
                             onBlur={onBlur}
-                            placeholder='Password'
-                            $width='85%'
+                            placeholder='Contraseña...'
+                            $width='100%'
+                            label='Contraseña'
+                            border_style='1px solid gray'
+                            $color='black'
+                            $border='4px'
                         />
-                    </Stack>
-                    <Button variant='contained' className={styles.send_button}>Ingresar</Button>
+                    </div>
                 </div>
-            </div>
-        </>
+            </Stack>
+        </Stack>
     )
 }
