@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles/roundedInput.module.css'
 import styled from 'styled-components'
-import { Stack, Typography } from '@mui/material'
 
 type RoundedInputProps = {
   type: string,
@@ -29,6 +28,9 @@ const Span = styled.span<{
   width: ${props => props.$width || '80%'};
   align-self: ${props => props.$alingSelf || 'center'};
   padding: 0em .5em;
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 14px;
 `
 
 const Label = styled.label<{ $width?: string }>`
@@ -41,6 +43,7 @@ const Label = styled.label<{ $width?: string }>`
   padding: 0em 0em 0em 1em;
   align-self: center;
   width: ${props => props.$width || '70%'};
+  font-family: var(--font-roboto);
 `
 
 const Input = styled.input<RoundedInputProps>`
@@ -54,13 +57,14 @@ const Input = styled.input<RoundedInputProps>`
     margin: 3px;
     font-size: 14px;
     font-weight: 600;
+    font-family: var(--font-roboto);
     align-self: ${props => props.$alingSelf || 'center'};
     letter-spacing: .5px;
     border-radius: ${props => props.$border || '.8em'};
     outline: 0;
 
   &:focus {
-   border: 3px solid var(--tolopea-700)
+   border: 3px solid var(--input-hover)
  }
 `
 
