@@ -32,16 +32,16 @@ export default function SignInComponent() {
 
     return (
         <Stack direction={'row'} flexWrap={'nowrap'}>
-            <Stack className={styles.sign_image_container} width={'40%'} height={'100vh'}>
+            <Stack minWidth={378} className={styles.sign_image_container} width={'40%'} height={'100vh'}>
                 <Image
                     className={styles.image}
                     src={sideImage}
                     alt='album image'
-                    fill
-                    quality={100}                    
+                    placeholder='blur'
+                    fill                    
                 />
             </Stack>
-            <Stack className='singInFormContainer' alignItems={'center'} justifyContent={'center'} width={'60%'} height={'100vh'}>
+            <Stack minWidth={345} alignItems={'center'} justifyContent={'center'} width={'60%'} height={'auto'}>
                 <div className={styles.form_container}>
                     <span className={styles.sign_in_tittle}>Bienvenido a RossMusic</span>
                     <span className={styles.info_text}>¿Aun no eres parte de nuestra comunidad? <span onClick={onClickRegister} className={styles.sign_forgot_text}>Registrate</span></span>
