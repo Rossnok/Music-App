@@ -8,6 +8,7 @@ import { Button, Stack } from '@mui/material'
 import { useQuery } from '@apollo/client'
 import { GET_USERS } from '@/apollo/graphql/user/queries'
 import Image from 'next/image'
+import sideImage from '../../../public/images/vinill_image.jpg'
 //TODO terminar con el diseño del componente, arreglar el roundedInput para que pueda ser solo la linea inferior para el login
 
 export default function SignInComponent() {
@@ -33,12 +34,11 @@ export default function SignInComponent() {
         <Stack direction={'row'} flexWrap={'nowrap'}>
             <Stack className={styles.sign_image_container} width={'40%'} height={'100vh'}>
                 <Image
-                    className={styles.img_contanier}
-                    src={'/images/vinill_image.jpg'}
+                    className={styles.image}
+                    src={sideImage}
                     alt='album image'
-                    layout='fill'
-                    objectFit='cover'
-                    quality={100}
+                    fill
+                    quality={100}                    
                 />
             </Stack>
             <Stack className='singInFormContainer' alignItems={'center'} justifyContent={'center'} width={'60%'} height={'100vh'}>
@@ -65,7 +65,7 @@ export default function SignInComponent() {
                                 field='email'
                                 type='text'
                                 onBlur={onBlur}
-                                $width='80%'                                
+                                $width='80%'
                                 label='Correo electronico'
                                 border_style='1px solid gray'
                                 $color='black'
