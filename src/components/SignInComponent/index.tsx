@@ -9,7 +9,6 @@ import { useQuery } from '@apollo/client'
 import { GET_USERS } from '@/apollo/graphql/user/queries'
 import Image from 'next/image'
 import sideImage from '../../../public/images/vinill_image.jpg'
-//TODO terminar con el diseño del componente, arreglar el roundedInput para que pueda ser solo la linea inferior para el login
 
 export default function SignInComponent() {
     const [isRegister, setIsRegister] = useState<boolean>(false)
@@ -31,17 +30,21 @@ export default function SignInComponent() {
     }
 
     return (
-        <Stack direction={'row'} flexWrap={'nowrap'}>
-            <Stack minWidth={378} className={styles.sign_image_container} width={'40%'} height={'100vh'}>
+        <Stack direction={'row'} flexWrap={'nowrap'} overflow={"hidden"}>
+            <Stack minWidth={200} className={styles.sign_image_container} width={'40%'} height={'100vh'}>
                 <Image
                     className={styles.image}
                     src={sideImage}
                     alt='album image'
                     placeholder='blur'
-                    fill                    
+                    style={{
+                        width: '100%',
+                    }}  
+                    width={600}
+                    height={1280}        
                 />
             </Stack>
-            <Stack minWidth={345} alignItems={'center'} justifyContent={'center'} width={'60%'} height={'auto'}>
+            <Stack minWidth={345} alignItems={'center'} justifyContent={'center'} width={'60%'} height={'100vh'}>
                 <div className={styles.form_container}>
                     <span className={styles.sign_in_tittle}>Bienvenido a RossMusic</span>
                     <span className={styles.info_text}>¿Aun no eres parte de nuestra comunidad? <span onClick={onClickRegister} className={styles.sign_forgot_text}>Registrate</span></span>
@@ -63,7 +66,7 @@ export default function SignInComponent() {
                                 register={register}
                                 error={errors.email ? errors.email : ''}
                                 field='email'
-                                type='text'
+                                type='email'
                                 onBlur={onBlur}
                                 $width='80%'
                                 label='Correo electronico'
@@ -76,7 +79,7 @@ export default function SignInComponent() {
                             register={register}
                             error={errors.password ? errors.password : ''}
                             field='password'
-                            type='text'
+                            type='password'
                             onBlur={onBlur}
                             $width='80%'
                             label='Contraseña'
@@ -97,7 +100,6 @@ export default function SignInComponent() {
                                 height={40}
                                 style={{
                                     cursor: "pointer",
-                                    transform: 'scale(110%)'
                                 }}
                                 quality={100}
                             />
@@ -108,7 +110,6 @@ export default function SignInComponent() {
                                 height={40}
                                 style={{
                                     cursor: "pointer",
-                                    transform: 'scale(110%)'
                                 }}
                                 quality={100}
                             />
@@ -119,7 +120,6 @@ export default function SignInComponent() {
                                 height={40}
                                 style={{
                                     cursor: "pointer",
-                                    transform: 'scale(110%)'
                                 }}
                                 quality={100}
                             />

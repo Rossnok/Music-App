@@ -35,7 +35,7 @@ const Span = styled.span<{
 
 const Label = styled.label<{ $width?: string }>`
   height: 14px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
@@ -64,7 +64,7 @@ const Input = styled.input<RoundedInputProps>`
     outline: 0;
 
   &:focus {
-   border: 3px solid var(--input-hover)
+   border: 2px solid var(--input-hover)
  }
 `
 

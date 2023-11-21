@@ -41,10 +41,10 @@ input[type=number] {
 }
 
 :root {
-    --input-hover: #920053;
+    --input-hover: #086fe5;
 
     /*Text styles*/
     --font-kaushan:'Kaushan Script', cursive;
-    --error-text: rgb(214, 24, 24);
+    --error-text: rgb(238, 34, 34);
     --font-roboto: 'Roboto'
 }
