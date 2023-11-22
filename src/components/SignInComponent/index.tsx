@@ -19,8 +19,6 @@ export default function SignInComponent() {
 
     const { data, error, loading } = useQuery(GET_USERS)
 
-    loading ? '' : console.log(data)
-
     const onBlur = (field: []) => {
         trigger(field)
     }
