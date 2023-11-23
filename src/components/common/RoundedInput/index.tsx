@@ -90,6 +90,7 @@ export default function RoundedInput({
         <Span $width={$width} $alingSelf={$alingSelf}>{label}</Span>
       }
       <Input
+        id={field}
         onBlurCapture={() => { onBlur([field]) }}
         {...register(field)}
         type={type}

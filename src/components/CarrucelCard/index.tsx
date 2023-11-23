@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import Image from "next/image"
 import styles from './styles/carrucelCard.module.css'
+import styled from "styled-components"
 
 type CarrucelCardProps = {
     src: any,
@@ -9,10 +10,17 @@ type CarrucelCardProps = {
     traks: string,
     genre: string,
     discografic: string,
-    onClick: any
+    onClick: any,
+    $backgroundColor?: string
 }
 
-export default function CarrucelCard({ src, name, publication, traks, genre, discografic, onClick }: CarrucelCardProps) {
+const InfoDiv = styled.div<{ $backgroundColor?: string }>`
+    padding: .5em;
+    height: 35%;
+    background:${props => props.$backgroundColor || 'white'};
+`
+
+export default function CarrucelCard({ src, name, publication, traks, genre, discografic, onClick, $backgroundColor }: CarrucelCardProps) {
     return (
         <div onClick={() => {
             onClick({
@@ -27,12 +35,15 @@ export default function CarrucelCard({ src, name, publication, traks, genre, dis
             <div className={styles.image_container}>
                 <Image
                     className={styles.next_image}
-                    style={{ objectFit: 'contain' }}
-                    layout="fill"
-                    src={src} alt="Music Album"
+                    fill
+                    sizes="100vh"
+                    src={src}
+                    alt="Music Album"
                 />
             </div>
-            <Stack className={styles.info_container}>
+            <InfoDiv
+                $backgroundColor={$backgroundColor}
+            >
                 <Stack direction={'row'} alignItems={'center'} gap={1}>
                     <Image src={'/images/albumicons/album.png'} alt="Album Icon" width={25} height={25} />
                     <Typography className={styles.info_text}>{name}</Typography>
@@ -53,7 +64,7 @@ export default function CarrucelCard({ src, name, publication, traks, genre, dis
                     <Image src={'/images/albumicons/music_store.png'} alt="Album Icon" width={25} height={25} />
                     <Typography className={styles.info_text}>{`Discografica ${discografic}`}</Typography>
                 </Stack>
-            </Stack>
+            </InfoDiv>
         </div>
     )
 }

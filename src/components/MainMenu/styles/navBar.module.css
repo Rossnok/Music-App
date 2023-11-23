@@ -12,7 +12,7 @@
     text-decoration: none;
     list-style: none;
     cursor: pointer;
-    color: rgb(206, 212, 218);
+    color: rgb(252, 252, 252);
     font-size: 19px;
     font-family: Helvatica;
     padding: 0em 0em 0em .5em;
@@ -31,7 +31,7 @@
 }
 
 .rainbow_text {
-    color: rgb(180, 33, 199);
+    color: rgb(229, 36, 255);
     background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     font-weight: 700;

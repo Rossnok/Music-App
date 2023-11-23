@@ -16,11 +16,11 @@ export default function ImagesContainer() {
     }
 
     return (
-        <Stack direction={'row'} flexWrap={'wrap'} padding={'.8em 0em 0em 1em'} width={'100%'} gap={3} overflow={'auto'}>
+        <Stack direction={'row'} flexWrap={'wrap'} padding={'.5em 0em .5em .5em'} width={'100%'} gap={2} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {
-                return (
-                    <Stack key={index}>
+                return (                   
                         <CarrucelCard
+                            key={index}
                             onClick={onClick}
                             name={album.albumName ? album.albumName : ''}
                             publication={album.year ? album.year : ''}
@@ -28,8 +28,8 @@ export default function ImagesContainer() {
                             discografic={album.recordCompany ? album.recordCompany : ''}
                             genre={album.genre ? album.genre : ''}
                             src={album.src ? album.src : ''}
-                        />
-                    </Stack>
+                            $backgroundColor='blue'
+                        />                
                 )
             })
             }

@@ -1,31 +1,19 @@
-import React, { useState } from 'react'
 import styles from './styles/singInComponent.module.css'
 import RoundedInput from '../common/RoundedInput'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { SignInValidationSchema } from './SignInValidationSchema'
 import { Button, Stack } from '@mui/material'
-import { useQuery } from '@apollo/client'
-import { GET_USERS } from '@/apollo/graphql/user/queries'
 import Image from 'next/image'
 import sideImage from '../../../public/images/vinill_image.jpg'
+import useSignInLogic from './useSignInLogic'
 
 export default function SignInComponent() {
-    const [isRegister, setIsRegister] = useState<boolean>(false)
-
-    const { register, trigger, handleSubmit, formState: { errors, isSubmitSuccessful }, setValue, watch, getValues } = useForm({
-        resolver: yupResolver(SignInValidationSchema)
-    })
-
-    const { data, error, loading } = useQuery(GET_USERS)
-
-    const onBlur = (field: []) => {
-        trigger(field)
-    }
-
-    const onClickRegister = () => {
-        setIsRegister(!isRegister)
-    }
+    const {
+        isRegister,
+        errors,
+        onBlur,
+        onClickRegister,
+        onSubmitUser,
+        register
+    } = useSignInLogic()
 
     return (
         <Stack direction={'row'} flexWrap={'nowrap'} overflow={"hidden"}>
@@ -37,9 +25,9 @@ export default function SignInComponent() {
                     placeholder='blur'
                     style={{
                         width: '100%',
-                    }}  
+                    }}
                     width={600}
-                    height={1280}        
+                    height={1280}
                 />
             </Stack>
             <Stack minWidth={345} alignItems={'center'} justifyContent={'center'} width={'60%'} height={'100vh'}>
@@ -85,7 +73,7 @@ export default function SignInComponent() {
                             $color='black'
                             $border='4px'
                         />
-                        <Button className={styles.send_btn} variant="contained">{isRegister ? 'Registrar' : 'Ingresar'}</Button>
+                        <Button className={styles.send_btn} onClick={onSubmitUser} variant="contained">{isRegister ? 'Registrar' : 'Ingresar'}</Button>
                     </div>
                     <span className={styles.sign_forgot_text}>¿Olvidaste tu contraseña?</span>
                     <div className={styles.social_media}>

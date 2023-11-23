@@ -19,21 +19,21 @@ export default function MainMenu() {
     return (
         <Stack>
             {!ismovil &&
-                <Stack bgcolor={'#18003B'} direction={'column'} padding={'1em'} height={'100vh'} gap={2} width={'fit-content'}>
+                <Stack bgcolor={'#F2B705'} direction={'column'} padding={'1em'} height={'100vh'} gap={2} width={'fit-content'}>
                     <Stack direction={'row'} gap={3} alignItems={'center'}>
                         <Image
                             src={'/images/musica.png'}
-                            width={70}
-                            height={70}
+                            width={40}
+                            height={40}
                             alt='Company icon'
                         />
-                        <Typography className={styles.rainbow_text} variant='h4'>RossMusic</Typography>
+                        <Typography className={styles.rainbow_text} variant='h5'>RossMusic</Typography>
                     </Stack>
                     <Stack className={styles.links_container}>
                         <li onClick={toHome}>Home</li>
                         <li onClick={toAlbumForm}>Nuevo Album</li>
                     </Stack>
-                    <Stack position={'relative'} direction={'row'} gap={'2em'} padding={'0em 2em 0em 0em'}>
+                    <Stack position={'relative'} direction={'row'} gap={'1em'} padding={'0em 2em 0em 0em'}>
                         <Button>Sign in</Button>
                         <Button>Login</Button>
                     </Stack>
