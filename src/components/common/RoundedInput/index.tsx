@@ -25,6 +25,7 @@ const Span = styled.span<{
   $width?: string,
   $alingSelf?: string
  }>`
+ 
   width: ${props => props.$width || '80%'};
   align-self: ${props => props.$alingSelf || 'center'};
   padding: 0em .5em;

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
-import styles from './styles/navBar.module.css'
+import { Button, Stack, useMediaQuery, useTheme } from '@mui/material'
+import styles from './styles/MainMenu.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 
 export default function MainMenu() {
     const theme = useTheme();
     const ismovil = useMediaQuery(theme.breakpoints.down('sm'));
-    const router  = useRouter();
+    const router = useRouter();
 
     const toAlbumForm = () => {
         router.push('/newAlbum');
@@ -17,27 +17,63 @@ export default function MainMenu() {
     }
 
     return (
-        <Stack>
+        <Stack width={'20%'}>
             {!ismovil &&
-                <Stack bgcolor={'#F2B705'} direction={'column'} padding={'1em'} height={'100vh'} gap={2} width={'fit-content'}>
-                    <Stack direction={'row'} gap={3} alignItems={'center'}>
+                <>
+                    <div className={styles.menu_item_container}>
                         <Image
-                            src={'/images/musica.png'}
-                            width={40}
-                            height={40}
-                            alt='Company icon'
+                            alt='Icono de menu'
+                            src={'/images/mainMenuIcons/hamburger_icon.svg'}
+                            width={30}
+                            height={30}
                         />
-                        <Typography className={styles.rainbow_text} variant='h5'>RossMusic</Typography>
+                        <span className={styles.menu_text}>Menu</span>
+                    </div>
+                    <Stack bgcolor={'#D8D8D8'} direction={'column'} padding={'0rem 1rem 0rem 1rem'} height={'94vh'} gap={2}>
+                        <Stack direction={'row'} gap={3} alignItems={'center'}>
+                        </Stack>
+                        <div className={styles.links_container}>
+                            <li onClick={toHome}>
+                                <Image
+                                    alt='Inicio icon'
+                                    src={'/images/mainMenuIcons/home_icon.png'}
+                                    width={30}
+                                    height={30}
+                                />
+                                <span className={styles.li_text}>Inicio</span>
+                            </li>
+                            <li onClick={toHome}>
+                                <Image
+                                    alt='Inicio icon'
+                                    src={'/images/mainMenuIcons/suggestions_icon.png'}
+                                    width={30}
+                                    height={30}
+                                />
+                                <span className={styles.li_text}>Sugerencias</span>
+                            </li>
+                            <li onClick={toHome}>
+                                <Image
+                                    alt='Inicio icon'
+                                    src={'/images/mainMenuIcons/about_icon.png'}
+                                    width={30}
+                                    height={30}
+                                />
+                                <span className={styles.li_text}>Acerca de</span>
+                            </li>
+                        </div>
+                        <div className={styles.logout_container}>
+                        <li onClick={toHome}>
+                                <Image
+                                    alt='Inicio icon'
+                                    src={'/images/mainMenuIcons/logout_icon.png'}
+                                    width={30}
+                                    height={30}
+                                />
+                                <span className={styles.li_text}>LogOut</span>
+                            </li>
+                        </div>
                     </Stack>
-                    <Stack className={styles.links_container}>
-                        <li onClick={toHome}>Home</li>
-                        <li onClick={toAlbumForm}>Nuevo Album</li>
-                    </Stack>
-                    <Stack position={'relative'} direction={'row'} gap={'1em'} padding={'0em 2em 0em 0em'}>
-                        <Button>Sign in</Button>
-                        <Button>Login</Button>
-                    </Stack>
-                </Stack>
+                </>
             }
             {ismovil &&
                 <Stack className={styles.links_container}>
@@ -45,6 +81,7 @@ export default function MainMenu() {
                 </Stack>
             }
         </Stack>
+
 
     )
 }

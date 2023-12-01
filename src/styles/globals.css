@@ -41,7 +41,7 @@ input[type=number] {
 }
 
 :root {
-    --input-hover: #086fe5;
+    --input-hover: #ff3c3c84;
 
     /*Text styles*/
     --font-kaushan:'Kaushan Script', cursive;
