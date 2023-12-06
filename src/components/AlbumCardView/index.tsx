@@ -17,9 +17,12 @@ type CarrucelCardProps = {
 const InfoDiv = styled.div`
     padding: .5em;
     height: 100%;
-    background: #3939397e;
+    background:  rgba(255, 255, 255, .2);
     border-radius: 0em 1em 1em 0em;
     width: 50%;
+    background: rgba(255, 255, 255, .3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 `
 
 export default function AlbumCardView({ src, name, publication, traks, genre, discografic, onClick, $backgroundColor }: CarrucelCardProps) {

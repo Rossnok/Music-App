@@ -1,13 +1,12 @@
-import { Stack } from "@mui/material"
-import ImagesContainer from "../ImagesContainer/index"
-import MainMenu from "../MainMenu"
+import ImagesContainer from "../AlbumsContainer/index"
 import HomeNavBar from "../HomeNavBar"
+import styles from './styles/homeComponent.module.css'
 
 export default function HomeComponent() {
     return (
-        <Stack width={'100%'} minWidth={'300px'} direction={'column'} gap={1} alignItems={'center'} justifyContent={'center'} height={'100vh'}>
+        <div className={styles.home_container}>
             <HomeNavBar />
             <ImagesContainer />
-        </Stack>
+        </div>
     )
 }

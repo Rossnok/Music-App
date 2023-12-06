@@ -1,4 +1,9 @@
-.image_container{
-    width: 100%; height: auto;
-    position: relative
+.home_container{
+    width: 100%;
+    min-width: 300px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2em;
+    align-items: center;
 }

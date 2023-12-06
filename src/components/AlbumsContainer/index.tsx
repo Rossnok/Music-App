@@ -1,24 +1,25 @@
-import { Stack } from '@mui/material'
 import data from '../../helpers/data'
 import CarrucelCard from '../AlbumCardView'
 import { useRouter } from 'next/router'
+import styles from './styles/AlbumsContainer.module.css'
 
-export default function ImagesContainer() {
+export default function AlbumsContainer() {
     const router = useRouter();
 
     const { albumsData } = data()
 
     const onClick = (data: any) => {
-      router.push({
-        pathname: '/album/index',
-        query: data
-      });
+        router.push({
+            pathname: '/album/index',
+            query: data
+        });
     }
 
     return (
-        <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} padding={'.5em .5em .5em .5em'} width={'100%'} gap={2} overflow={'auto'}>
-            {albumsData && albumsData.map((album, index) => {
-                return (                   
+        <div className={styles.albums_container}>
+            <div className={styles.albums_cards}>
+                {albumsData && albumsData.map((album, index) => {
+                    return (
                         <CarrucelCard
                             key={index}
                             onClick={onClick}
@@ -28,10 +29,11 @@ export default function ImagesContainer() {
                             discografic={album.recordCompany ? album.recordCompany : ''}
                             genre={album.genre ? album.genre : ''}
                             src={album.src ? album.src : ''}
-                        />                
-                )
-            })
-            }
-        </Stack>
+                        />
+                    )
+                })
+                }
+            </div>
+        </div>
     )
 }

@@ -1,0 +1,17 @@
+.albums_container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    overflow: auto;
+    justify-content: center;
+}
+
+.albums_cards {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fill);
+    gap: 2em;
+    align-content: center;
+    padding: 1em 1em .5em .5em;
+}

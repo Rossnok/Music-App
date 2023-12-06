@@ -82,7 +82,7 @@ export default function data() {
             recordCompany: 'Parlophone',
             src: '/images/albums/David-Bowie-Heroes.jpg'
         },
-        {
+       /* {
             albumName: 'With the beatles',
             year: '1963',
             tracks: '7',
@@ -97,7 +97,7 @@ export default function data() {
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
             src: '/images/albums/The-Beatles-Abbey-Road-Album-cover-web-optimised-820.jpg'
-        },      
+        },*/      
     ]
 
     return {
