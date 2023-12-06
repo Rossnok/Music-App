@@ -16,7 +16,7 @@ export default function ImagesContainer() {
     }
 
     return (
-        <Stack direction={'row'} flexWrap={'wrap'} padding={'.5em 0em .5em .5em'} width={'100%'} gap={2} overflow={'auto'}>
+        <Stack direction={'row'} flexWrap={'wrap'} padding={'.5em .5em .5em .5em'} width={'95%'} gap={2} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {
                 return (                   
                         <CarrucelCard
@@ -28,7 +28,6 @@ export default function ImagesContainer() {
                             discografic={album.recordCompany ? album.recordCompany : ''}
                             genre={album.genre ? album.genre : ''}
                             src={album.src ? album.src : ''}
-                            $backgroundColor='blue'
                         />                
                 )
             })

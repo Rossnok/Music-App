@@ -8,7 +8,7 @@ export default function data() {
             tracks: '7',
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
-            src: '/images/albums/David-Bowie-Heroes.jpg'
+            src: '/images/albums/Pink-Floyd-Ummagumma.jpg'
         },
         {
             albumName: 'With the beatles',
@@ -24,7 +24,7 @@ export default function data() {
             tracks: '7',
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
-            src: '/images/albums/meet-the-beatles.jpg'
+            src: '/images/albums/Oasis-Definitely-Maybe.jpg'
         },
         {
             albumName: 'With the beatles',
@@ -96,7 +96,7 @@ export default function data() {
             tracks: '7',
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
-            src: '/images/albums/meet-the-beatles.jpg'
+            src: '/images/albums/The-Beatles-Abbey-Road-Album-cover-web-optimised-820.jpg'
         },      
     ]
 

@@ -17,7 +17,7 @@ export default function MainMenu() {
     }
 
     return (
-        <Stack width={'20%'}>
+        <Stack width={'15%'}>
             {!ismovil &&
                 <>
                     <div className={styles.menu_item_container}>
