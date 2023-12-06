@@ -7,7 +7,6 @@ type AppProps = {
   pageProps: any
 }
 
-
 // Exporta por defecto una función llamada 'App'.
 export default function App({ Component, pageProps }: AppProps) {
   // Retorna un elemento 'Component', que es un componente de React.

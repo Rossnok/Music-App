@@ -23,8 +23,8 @@ input[type=number] {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 2px;
+    height: 2px;
     background-color: none;
     transition: 0.2s ease;
 }
@@ -46,5 +46,5 @@ input[type=number] {
     /*Text styles*/
     --font-kaushan:'Kaushan Script', cursive;
     --error-text: rgb(238, 34, 34);
-    --font-roboto: 'Roboto'
+    --font-roboto: 'Roboto', sans-serif;;
 }

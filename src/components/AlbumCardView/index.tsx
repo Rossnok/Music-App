@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material"
 import Image from "next/image"
-import styles from './styles/carrucelCard.module.css'
+import styles from './styles/AlbumCardView.module.css'
 import styled from "styled-components"
 
 type CarrucelCardProps = {
@@ -22,7 +22,7 @@ const InfoDiv = styled.div`
     width: 50%;
 `
 
-export default function CarrucelCard({ src, name, publication, traks, genre, discografic, onClick, $backgroundColor }: CarrucelCardProps) {
+export default function AlbumCardView({ src, name, publication, traks, genre, discografic, onClick, $backgroundColor }: CarrucelCardProps) {
     return (
         <div onClick={() => {
             onClick({

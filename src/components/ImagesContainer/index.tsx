@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material'
 import data from '../../helpers/data'
-import CarrucelCard from '../CarrucelCard'
+import CarrucelCard from '../AlbumCardView'
 import { useRouter } from 'next/router'
 
 export default function ImagesContainer() {
@@ -16,7 +16,7 @@ export default function ImagesContainer() {
     }
 
     return (
-        <Stack direction={'row'} flexWrap={'wrap'} padding={'.5em .5em .5em .5em'} width={'95%'} gap={2} overflow={'auto'}>
+        <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} padding={'.5em .5em .5em .5em'} width={'100%'} gap={2} overflow={'auto'}>
             {albumsData && albumsData.map((album, index) => {
                 return (                   
                         <CarrucelCard
