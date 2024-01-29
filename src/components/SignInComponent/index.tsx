@@ -4,16 +4,25 @@ import { Button, Stack } from '@mui/material'
 import Image from 'next/image'
 import sideImage from '../../../public/images/vinill_image.jpg'
 import useSignInLogic from './useSignInLogic'
+import MessageModal from './SIgnInMessageModal'
 
 export default function SignInComponent() {
     const {
-        isRegister,
         errors,
         onBlur,
         onClickRegister,
-        onSubmitUser,
-        register
+        onRegisterUser,
+        register,
+        registerForm,
+        openDialog,
+        onCloseAceptDialog,
+        userSignIn,
+        signInError,
+        setSignInError
     } = useSignInLogic()
+
+    //const { data: session, status } = useSession()
+    //console.log(session);
 
     return (
         <Stack direction={'row'} flexWrap={'nowrap'} overflow={"hidden"}>
@@ -47,7 +56,7 @@ export default function SignInComponent() {
                             $color='black'
                             $border='4px'
                         />
-                        {isRegister &&
+                        {registerForm &&
                             <RoundedInput
                                 register={register}
                                 error={errors.email ? errors.email : ''}
@@ -73,7 +82,7 @@ export default function SignInComponent() {
                             $color='black'
                             $border='4px'
                         />
-                        <Button className={styles.send_btn} onClick={onSubmitUser} variant="contained">{isRegister ? 'Registrar' : 'Ingresar'}</Button>
+                        <Button className={styles.send_btn} onClick={registerForm ? onRegisterUser : userSignIn} variant="contained">{registerForm ? 'Registrar' : 'Ingresar'}</Button>
                     </div>
                     <span className={styles.sign_forgot_text}>¿Olvidaste tu contraseña?</span>
                     <div className={styles.social_media}>
@@ -113,6 +122,16 @@ export default function SignInComponent() {
                     </div>
                 </div>
             </Stack>
+            <MessageModal
+                isOpen={openDialog}
+                onClickOk={onCloseAceptDialog}
+                message={'Congratulations you have registered'}
+                signInError={signInError}
+                iconUri={signInError ? '/images/error.png':'/images/success.png'}
+                resetErrorState={setSignInError}
+            />
         </Stack>
     )
 }
+
+
