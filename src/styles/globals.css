@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Roboto:wght@300&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 html,
 body {
     margin: 0;
     padding: 0;
+    font-family: var(--font-roboto);
+    font-weight: 500;
 }
 
 * {
@@ -46,5 +51,6 @@ input[type=number] {
     /*Text styles*/
     --font-kaushan:'Kaushan Script', cursive;
     --error-text: rgb(238, 34, 34);
-    --font-roboto: 'Roboto', sans-serif;;
+    --font-serif-display: 'DM Serif Display';
+    --font-roboto: 'Roboto', sans-serif;
 }

@@ -82,13 +82,13 @@ export default function data() {
             recordCompany: 'Parlophone',
             src: '/images/albums/David-Bowie-Heroes.jpg'
         },
-       /* {
+        {
             albumName: 'With the beatles',
             year: '1963',
             tracks: '7',
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
-            src: '/images/albums/Elton-John-Dont-Shoot-Me-Im-Only-the-Piano-Player.jpg'
+            src: '/images/albums/David-Bowie-Heroes.jpg'
         },
         {
             albumName: 'With the beatles',
@@ -96,8 +96,16 @@ export default function data() {
             tracks: '7',
             genre: 'Rock and roll',
             recordCompany: 'Parlophone',
-            src: '/images/albums/The-Beatles-Abbey-Road-Album-cover-web-optimised-820.jpg'
-        },*/      
+            src: '/images/albums/David-Bowie-Heroes.jpg'
+        },
+        {
+            albumName: 'With the beatles',
+            year: '1963',
+            tracks: '7',
+            genre: 'Rock and roll',
+            recordCompany: 'Parlophone',
+            src: '/images/albums/David-Bowie-Heroes.jpg'
+        },
     ]
 
     return {

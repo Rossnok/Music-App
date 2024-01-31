@@ -9,9 +9,9 @@ type ButtonProps = {
 
 const Button = styled.button<ButtonProps>`
     background: ${props => props.$state ? '#F2B9B3' : '#6d9ba683'};
-    font-size: 12px;
+    font-size: 14px;
     font-family: var(--font-roboto);
-    font-weight: 800;
+    font-weight: 500;
     border-radius: .5em;
     letter-spacing: .8px;
     border-style: none;

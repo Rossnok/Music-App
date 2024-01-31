@@ -1,4 +1,3 @@
-import { Stack, Typography } from "@mui/material"
 import Image from "next/image"
 import styles from './styles/AlbumCardView.module.css'
 import styled from "styled-components"
@@ -15,14 +14,10 @@ type CarrucelCardProps = {
 }
 
 const InfoDiv = styled.div`
-    padding: .5em;
     height: 100%;
-    background:  rgba(255, 255, 255, .2);
-    border-radius: 0em 1em 1em 0em;
-    width: 50%;
-    background: rgba(255, 255, 255, .3);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    width: 85%;
+    display:flex;
+    flex-flow: row nowrap;
 `
 
 export default function AlbumCardView({ src, name, publication, traks, genre, discografic, onClick, $backgroundColor }: CarrucelCardProps) {
@@ -40,19 +35,25 @@ export default function AlbumCardView({ src, name, publication, traks, genre, di
             <div className={styles.image_container}>
                 <Image
                     className={styles.next_image}
-                    fill
-                    sizes="50vh"
+                    fill={true}
+                    sizes="100vw"
                     src={src}
                     alt="Music Album"
                 />
             </div>
             <InfoDiv>
-                {
-                    <Stack direction={'row'} alignItems={'center'} gap={1}>
-                        <Image src={'/images/albumicons/album.svg'} alt="Album Icon" width={25} height={25} />
-                        <Typography className={styles.info_text}>{name}</Typography>
-                    </Stack>
-                }
+                <div className={styles.info_container} >
+                    <p className={styles.song_title}>{'Over 85'}</p>
+                    <p className={styles.song_artist}>{'Osean Log'}</p>                    
+                </div>
+                <div className={styles.fav_icon_container}>
+                        <Image                            
+                            width={40}
+                            height={40}
+                            src={'/images/fav_unmarked.png'}
+                            alt="Music Album"
+                        />
+                    </div>
             </InfoDiv>
         </div>
     )
