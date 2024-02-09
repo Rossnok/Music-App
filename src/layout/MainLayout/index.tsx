@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material'
 import style from './layout.module.css'
+import HomeNavBar from '@/components/HomeNavBar'
 
 export default function RootLayout({
   children,
@@ -7,8 +8,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Stack direction={'row'} className={style.container}>
-        {children}
+    <Stack direction={'column'} className={style.container}>
+      <HomeNavBar/>
+      {children}
     </Stack>
   )
 }

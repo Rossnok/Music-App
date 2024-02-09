@@ -24,7 +24,7 @@ export default function useSignInLogic() {
 
     const [addUser, { data: userData, loading: addUserLoading, error: addUserError }] = useMutation(ADD_USER, {
         onError(error: any, clientOptions) {
-            setSignInError({errorcode:error.graphQLErrors[0].extensions.exception!.code, errorkeypattern: error.graphQLErrors[0].extensions.exception!.keyPattern})
+            setSignInError({ errorcode: error.graphQLErrors[0].extensions.exception!.code, errorkeypattern: error.graphQLErrors[0].extensions.exception!.keyPattern })
         },
     })
 
@@ -39,7 +39,7 @@ export default function useSignInLogic() {
             }
         })
 
-       
+
         setValue('userName', '')
         setValue('password', '')
         setValue('email', '')

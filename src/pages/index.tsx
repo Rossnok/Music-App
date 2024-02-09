@@ -1,10 +1,11 @@
 import RootLayout from '@/layout/MainLayout'
-import HomeComponent from '@/components/HomeComponent'
+import Home from '@/components/Home/HomeComponent'
+import HomeNavBar from '@/components/HomeNavBar'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <RootLayout>
-     <HomeComponent/>
+      <Home/>
     </RootLayout>
   )
 }
